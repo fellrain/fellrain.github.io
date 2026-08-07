@@ -199,25 +199,25 @@
 
         /* Grass Block Pattern Background */
         .bg-grass-pattern {
-            background-image: 
-                linear-gradient(180deg, #5D8C3A 0%, #5D8C3A 20%, #8B6914 20%, #8B6914 40%, #6B4E14 40%, #6B4E14 100%);
+            background-image:
+                    linear-gradient(180deg, #5D8C3A 0%, #5D8C3A 20%, #8B6914 20%, #8B6914 40%, #6B4E14 40%, #6B4E14 100%);
             background-size: 100% 64px;
         }
 
         /* Dirt Pattern */
         .bg-dirt {
             background-color: #8B6914;
-            background-image: 
-                repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(107,78,20,0.3) 31px, rgba(107,78,20,0.3) 32px),
-                repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(107,78,20,0.3) 31px, rgba(107,78,20,0.3) 32px);
+            background-image:
+                    repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(107,78,20,0.3) 31px, rgba(107,78,20,0.3) 32px),
+                    repeating-linear-gradient(90deg, transparent, transparent 31px, rgba(107,78,20,0.3) 31px, rgba(107,78,20,0.3) 32px);
         }
 
         /* Stone Pattern */
         .bg-stone {
             background-color: #7D7D7D;
-            background-image: 
-                repeating-linear-gradient(0deg, transparent, transparent 15px, rgba(90,90,90,0.4) 15px, rgba(90,90,90,0.4) 16px),
-                repeating-linear-gradient(90deg, transparent, transparent 15px, rgba(90,90,90,0.4) 15px, rgba(90,90,90,0.4) 16px);
+            background-image:
+                    repeating-linear-gradient(0deg, transparent, transparent 15px, rgba(90,90,90,0.4) 15px, rgba(90,90,90,0.4) 16px),
+                    repeating-linear-gradient(90deg, transparent, transparent 15px, rgba(90,90,90,0.4) 15px, rgba(90,90,90,0.4) 16px);
         }
 
         /* Night Sky with Stars */
@@ -379,674 +379,714 @@
             }
         }
     </style>
-<base target="_blank">
+    <base target="_blank">
+    <base target="_blank">
 </head>
 <body class="text-white">
 
-    <!-- Loading Screen -->
-    <div id="mc-loader">
-        <div class="font-pixel text-2xl md:text-4xl text-mc-gold mb-4" style="text-shadow: 3px 3px 0 #000;">正在加载世界...</div>
-        <div class="mc-progress">
-            <div class="mc-progress-fill" id="loader-fill"></div>
-        </div>
-        <div class="font-pixel text-sm text-gray-400 mt-2" id="loader-text">生成地形中...</div>
+<!-- Loading Screen -->
+<div id="mc-loader">
+    <div class="font-pixel text-2xl md:text-4xl text-mc-gold mb-4" style="text-shadow: 3px 3px 0 #000;">正在加载世界...</div>
+    <div class="mc-progress">
+        <div class="mc-progress-fill" id="loader-fill"></div>
     </div>
+    <div class="font-pixel text-sm text-gray-400 mt-2" id="loader-text">生成地形中...</div>
+</div>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-stone border-b-4 border-black">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <a href="#" class="font-pixel text-xl text-mc-gold hover:text-yellow-300 transition-colors" style="text-shadow: 2px 2px 0 #000;">
-                    🟫 童话小可
-                </a>
-                <div class="hidden md:flex items-center space-x-2">
-                    <a href="#home" class="mc-btn px-4 py-2 text-white font-pixel text-sm">🏠 主页</a>
-                    <a href="#about" class="mc-btn px-4 py-2 text-white font-pixel text-sm">📋 玩家信息</a>
-                    <a href="#datapacks" class="mc-btn px-4 py-2 text-white font-pixel text-sm">📦 数据包</a>
-                    <a href="#skills" class="mc-btn px-4 py-2 text-white font-pixel text-sm">⭐ 技能</a>
-                    <a href="#contact" class="mc-btn px-4 py-2 text-white font-pixel text-sm">✉️ 联系</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden mc-btn px-3 py-2 text-white font-pixel text-sm">
-                    ☰ 菜单
-                </button>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-stone border-b-4 border-black">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <a href="#" class="font-pixel text-xl text-mc-gold hover:text-yellow-300 transition-colors" style="text-shadow: 2px 2px 0 #000;">
+                🟫 童话小可
+            </a>
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="#home" class="mc-btn px-4 py-2 text-white font-pixel text-sm">🏠 主页</a>
+                <a href="#about" class="mc-btn px-4 py-2 text-white font-pixel text-sm">📋 玩家信息</a>
+                <a href="#datapacks" class="mc-btn px-4 py-2 text-white font-pixel text-sm">📦 数据包</a>
+                <a href="#skills" class="mc-btn px-4 py-2 text-white font-pixel text-sm">⭐ 技能</a>
+                <a href="#contact" class="mc-btn px-4 py-2 text-white font-pixel text-sm">✉️ 联系</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden mc-btn px-3 py-2 text-white font-pixel text-sm">
+                ☰ 菜单
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-stone border-t-4 border-black pb-4">
+        <div class="px-4 pt-2 space-y-2">
+            <a href="#home" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">🏠 主页</a>
+            <a href="#about" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">📋 玩家信息</a>
+            <a href="#datapacks" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">📦 数据包</a>
+            <a href="#skills" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">⭐ 技能</a>
+            <a href="#contact" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">✉️ 联系</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen flex items-center justify-center bg-night-sky pt-16 overflow-hidden">
+    <!-- Stars -->
+    <div id="stars-container" class="absolute inset-0 pointer-events-none"></div>
+
+    <!-- Moon -->
+    <div class="absolute top-20 right-20 w-24 h-24 bg-yellow-100 rounded-none" style="box-shadow: 0 0 40px rgba(255,255,200,0.3); clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);"></div>
+
+    <!-- Ground -->
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-grass-pattern border-t-4 border-black"></div>
+
+    <!-- Trees (CSS) -->
+    <div class="absolute bottom-32 left-10 w-4 h-16 bg-mc-woodDark border-2 border-black"></div>
+    <div class="absolute bottom-48 left-6 w-12 h-12 bg-mc-grassDark border-2 border-black" style="clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+
+    <div class="absolute bottom-32 right-20 w-4 h-20 bg-mc-woodDark border-2 border-black"></div>
+    <div class="absolute bottom-52 right-14 w-16 h-16 bg-mc-grassDark border-2 border-black" style="clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <!-- Player Head -->
+        <div class="mb-8 animate-float">
+            <div class="w-32 h-32 mx-auto border-4 border-black relative overflow-hidden" style="box-shadow: 8px 8px 0 rgba(0,0,0,0.5);">
+                <img src="avatar.png" alt="童话小可" class="w-full h-full object-cover" style="image-rendering: pixelated;">
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-stone border-t-4 border-black pb-4">
-            <div class="px-4 pt-2 space-y-2">
-                <a href="#home" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">🏠 主页</a>
-                <a href="#about" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">📋 玩家信息</a>
-                <a href="#datapacks" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">📦 数据包</a>
-                <a href="#skills" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">⭐ 技能</a>
-                <a href="#contact" class="block mc-btn px-4 py-2 text-white font-pixel text-sm text-center">✉️ 联系</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-night-sky pt-16 overflow-hidden">
-        <!-- Stars -->
-        <div id="stars-container" class="absolute inset-0 pointer-events-none"></div>
+        <h1 class="font-pixel text-4xl md:text-6xl lg:text-7xl text-mc-gold mb-4 mc-reveal active" style="text-shadow: 4px 4px 0 #000, -2px -2px 0 #5A3A00;">
+            童话小可
+        </h1>
 
-        <!-- Moon -->
-        <div class="absolute top-20 right-20 w-24 h-24 bg-yellow-100 rounded-none" style="box-shadow: 0 0 40px rgba(255,255,200,0.3); clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);"></div>
-
-        <!-- Ground -->
-        <div class="absolute bottom-0 left-0 right-0 h-32 bg-grass-pattern border-t-4 border-black"></div>
-
-        <!-- Trees (CSS) -->
-        <div class="absolute bottom-32 left-10 w-4 h-16 bg-mc-woodDark border-2 border-black"></div>
-        <div class="absolute bottom-48 left-6 w-12 h-12 bg-mc-grassDark border-2 border-black" style="clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-
-        <div class="absolute bottom-32 right-20 w-4 h-20 bg-mc-woodDark border-2 border-black"></div>
-        <div class="absolute bottom-52 right-14 w-16 h-16 bg-mc-grassDark border-2 border-black" style="clip-path: polygon(50% 0%, 100% 100%, 0% 100%);"></div>
-
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <!-- Player Head -->
-            <div class="mb-8 animate-float">
-                <div class="w-32 h-32 mx-auto border-4 border-black relative overflow-hidden" style="box-shadow: 8px 8px 0 rgba(0,0,0,0.5);">
-                    <img src="avatar.png" alt="童话小可" class="w-full h-full object-cover" style="image-rendering: pixelated;">
-                </div>
-            </div>
-
-            <h1 class="font-pixel text-4xl md:text-6xl lg:text-7xl text-mc-gold mb-4 mc-reveal active" style="text-shadow: 4px 4px 0 #000, -2px -2px 0 #5A3A00;">
-                童话小可
-            </h1>
-
-            <div class="mc-panel-dark inline-block px-6 py-3 mb-8 mc-reveal active" style="transition-delay: 0.2s">
-                <p class="font-pixel text-lg md:text-2xl text-mc-diamond" style="text-shadow: 2px 2px 0 #000;">
-                    <span id="mc-typewriter"></span><span class="animate-pulse">_</span>
-                </p>
-            </div>
-
-            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed mc-reveal active" style="transition-delay: 0.3s; text-shadow: 1px 1px 2px #000;">
-                一个热爱 Minecraft 的玩家，喜欢做各种好玩的数据包！<br>
-                已开发 <span class="text-mc-gold font-bold">25+</span> 个数据包，覆盖 PVP、PVE、休闲等多种玩法。
+        <div class="mc-panel-dark inline-block px-6 py-3 mb-8 mc-reveal active" style="transition-delay: 0.2s">
+            <p class="font-pixel text-lg md:text-2xl text-mc-diamond" style="text-shadow: 2px 2px 0 #000;">
+                <span id="mc-typewriter"></span><span class="animate-pulse">_</span>
             </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mc-reveal active" style="transition-delay: 0.4s">
-                <a href="#datapacks" class="mc-btn mc-btn-green px-8 py-4 text-white font-pixel text-lg min-w-[200px]">
-                    📦 浏览数据包
-                </a>
-                <a href="#contact" class="mc-btn mc-btn-gold px-8 py-4 text-white font-pixel text-lg min-w-[200px]">
-                    ⛏️ 开始合作
-                </a>
-            </div>
-
-            <!-- Hearts -->
-            <div class="mt-8 flex justify-center gap-1 mc-reveal active" style="transition-delay: 0.5s">
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-                <div class="mc-heart"></div>
-            </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="relative py-24 md:py-32 bg-dirt">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16 mc-reveal">
-                <div class="inline-block mc-panel-dark px-6 py-2 mb-4">
-                    <span class="font-pixel text-mc-gold text-lg" style="text-shadow: 2px 2px 0 #000;">📋 玩家信息</span>
-                </div>
-                <h2 class="font-pixel text-3xl md:text-5xl text-white mb-4" style="text-shadow: 3px 3px 0 #000;">
-                    关于 <span class="text-mc-diamond">童话小可</span>
-                </h2>
-            </div>
+        <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed mc-reveal active" style="transition-delay: 0.3s; text-shadow: 1px 1px 2px #000;">
+            一个热爱 Minecraft 的玩家，喜欢做各种好玩的数据包！<br>
+            已开发 <span class="text-mc-gold font-bold">25+</span> 个数据包，覆盖 PVP、PVE、休闲等多种玩法。
+        </p>
 
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <!-- Player Card -->
-                <div class="mc-reveal">
-                    <div class="mc-panel p-6 relative">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-20 h-20 border-4 border-black flex items-center justify-center flex-shrink-0 overflow-hidden" style="box-shadow: 4px 4px 0 rgba(0,0,0,0.3);">
-                                <img src="avatar.png" alt="童话小可" class="w-full h-full object-cover" style="image-rendering: pixelated;">
-                            </div>
-                            <div>
-                                <h3 class="font-pixel text-2xl text-mc-gold" style="text-shadow: 2px 2px 0 #000;">童话小可</h3>
-                                <p class="text-gray-600 font-medium">数据包开发者</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3 bg-gray-200 p-3 border-2 border-gray-400">
-                                <span class="text-xl">⚔️</span>
-                                <div>
-                                    <div class="text-sm text-gray-500">职业</div>
-                                    <div class="font-bold text-gray-800">我的世界爱好者</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 bg-gray-200 p-3 border-2 border-gray-400">
-                                <span class="text-xl">📦</span>
-                                <div>
-                                    <div class="text-sm text-gray-500">数据包数量</div>
-                                    <div class="font-bold text-gray-800">26 个已完成项目</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 bg-gray-200 p-3 border-2 border-gray-400">
-                                <span class="text-xl">🎯</span>
-                                <div>
-                                    <div class="text-sm text-gray-500">专精领域</div>
-                                    <div class="font-bold text-gray-800">做各种好玩的模式</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 bg-gray-200 p-3 border-2 border-gray-400">
-                                <span class="text-xl">💎</span>
-                                <div>
-                                    <div class="text-sm text-gray-500">开发平台</div>
-                                    <div class="font-bold text-gray-800">Java 版 Minecraft</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- XP Level -->
-                        <div class="mt-6 flex items-center gap-2">
-                            <span class="font-pixel text-mc-green text-xl" style="text-shadow: 1px 1px 0 #000;">等级 99</span>
-                            <div class="flex-1 mc-xp-bar">
-                                <div class="mc-xp-fill" style="width: 95%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Grid -->
-                <div class="mc-reveal" style="transition-delay: 0.2s">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="mc-panel p-6 text-center hover:scale-105 transition-transform cursor-pointer" onclick="createParticles(event)">
-                            <div class="text-4xl mb-2">⚔️</div>
-                            <div class="font-pixel text-3xl text-mc-red" style="text-shadow: 2px 2px 0 #000;">26</div>
-                            <div class="text-gray-600 font-medium mt-1">数据包</div>
-                        </div>
-                        <div class="mc-panel p-6 text-center hover:scale-105 transition-transform cursor-pointer" onclick="createParticles(event)">
-                            <div class="text-4xl mb-2">🏆</div>
-                            <div class="font-pixel text-3xl text-mc-gold" style="text-shadow: 2px 2px 0 #000;">15+</div>
-                            <div class="text-gray-600 font-medium mt-1">PVP模式</div>
-                        </div>
-                        <div class="mc-panel p-6 text-center hover:scale-105 transition-transform cursor-pointer" onclick="createParticles(event)">
-                            <div class="text-4xl mb-2">🧟</div>
-                            <div class="font-pixel text-3xl text-mc-emerald" style="text-shadow: 2px 2px 0 #000;">5+</div>
-                            <div class="text-gray-600 font-medium mt-1">PVE模式</div>
-                        </div>
-                        <div class="mc-panel p-6 text-center hover:scale-105 transition-transform cursor-pointer" onclick="createParticles(event)">
-                            <div class="text-4xl mb-2">🎮</div>
-                            <div class="font-pixel text-3xl text-mc-diamond" style="text-shadow: 2px 2px 0 #000;">6+</div>
-                            <div class="text-gray-600 font-medium mt-1">小游戏</div>
-                        </div>
-                    </div>
-
-                    <!-- Hotbar -->
-                    <div class="mt-6 mc-panel p-4">
-                        <div class="font-pixel text-sm text-gray-600 mb-2 text-center">快捷栏</div>
-                        <div class="grid grid-cols-9 gap-1">
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">🗡️</div>
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">🏹</div>
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">🔫</div>
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">💣</div>
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">🚩</div>
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">🧪</div>
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">🎣</div>
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">🏰</div>
-                            <div class="mc-slot aspect-square flex items-center justify-center text-xl">📦</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mc-reveal active" style="transition-delay: 0.4s">
+            <a href="#datapacks" class="mc-btn mc-btn-green px-8 py-4 text-white font-pixel text-lg min-w-[200px]">
+                📦 浏览数据包
+            </a>
+            <a href="#contact" class="mc-btn mc-btn-gold px-8 py-4 text-white font-pixel text-lg min-w-[200px]">
+                ⛏️ 开始合作
+            </a>
         </div>
-    </section>
 
-    <!-- Datapacks Section -->
-    <section id="datapacks" class="relative py-24 md:py-32 bg-stone">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16 mc-reveal">
-                <div class="inline-block mc-panel-dark px-6 py-2 mb-4">
-                    <span class="font-pixel text-mc-gold text-lg" style="text-shadow: 2px 2px 0 #000;">📦 数据包仓库</span>
-                </div>
-                <h2 class="font-pixel text-3xl md:text-5xl text-white mb-4" style="text-shadow: 3px 3px 0 #000;">
-                    已开发的 <span class="text-mc-diamond">数据包</span>
-                </h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">
-                    点击物品查看详情，悬停显示工具提示
-                </p>
-            </div>
-
-            <!-- Category: PVP Modes -->
-            <div class="mb-12 mc-reveal">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-8 bg-mc-red border-2 border-black flex items-center justify-center">⚔️</div>
-                    <h3 class="font-pixel text-2xl text-mc-red" style="text-shadow: 2px 2px 0 #000;">PVP 竞技模式</h3>
-                    <div class="flex-1 h-2 bg-gray-600 border-2 border-black"></div>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    <!-- 赏金猎人 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="赏金猎人模式" data-desc="击败玩家获得赏金，赏金最高的玩家成为目标" data-rarity="rare">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🎯</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">赏金猎人</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
-                    </div>
-                    <!-- 炸弹人 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="炸弹人模式" data-desc="枪战版烫手山芋" data-rarity="uncommon">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💣</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">炸弹人</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
-                    </div>
-                    <!-- 爆破模式 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="爆破模式" data-desc="进攻方安放炸弹，防守方阻止爆破" data-rarity="rare">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💥</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">爆破模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
-                    </div>
-                    <!-- 大逃杀 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group item-glow-enchanted" data-name="大逃杀模式" data-desc="缩圈生存，最后一人获胜，含空投系统" data-rarity="legendary">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🏆</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">大逃杀</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-gold border border-black"></div>
-                    </div>
-                    <!-- 夺旗 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="夺旗模式" data-desc="夺取敌方旗帜并带回基地得分" data-rarity="uncommon">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🚩</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">夺旗模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
-                    </div>
-                    <!-- 职业战争 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="职业战争模式" data-desc="选择职业，每种职业拥有独特技能与装备" data-rarity="epic">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">⚔️</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">职业战争</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
-                    </div>
-                    <!-- 个人竞技 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="个人竞技模式" data-desc="自由混战，击杀得分，先到目标分获胜" data-rarity="common">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🥷</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">个人竞技</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-gray-400 border border-black"></div>
-                    </div>
-                    <!-- 团队竞技 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="团队竞技模式" data-desc="红蓝两队对抗，团队配合取胜" data-rarity="common">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">👥</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">团队竞技</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-gray-400 border border-black"></div>
-                    </div>
-                    <!-- 幽灵模式 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="幽灵模式" data-desc="隐身潜行，近战一击必杀" data-rarity="rare">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">👻</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">幽灵模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
-                    </div>
-                    <!-- 歼灭模式 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="歼灭模式" data-desc="回合制，全灭敌方队伍获胜，不可复活" data-rarity="uncommon">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💀</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">歼灭模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
-                    </div>
-                    <!-- 一击必杀 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="一击必杀模式" data-desc="所有攻击一击致命，考验走位与反应" data-rarity="rare">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">⚡</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">一击必杀</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
-                    </div>
-                    <!-- 枪械追杀 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="枪械追杀模式" data-desc="使用随机枪械，追杀玩家" data-rarity="epic">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🔫</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">枪械追杀</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category: PVE Modes -->
-            <div class="mb-12 mc-reveal" style="transition-delay: 0.1s">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-8 bg-mc-emerald border-2 border-black flex items-center justify-center">🧟</div>
-                    <h3 class="font-pixel text-2xl text-mc-emerald" style="text-shadow: 2px 2px 0 #000;">PVE 生存模式</h3>
-                    <div class="flex-1 h-2 bg-gray-600 border-2 border-black"></div>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    <!-- PVE模式 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="PVE模式" data-desc="合作对抗AI怪物波次，守护据点" data-rarity="common">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🛡️</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">PVE模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-gray-400 border border-black"></div>
-                    </div>
-                    <!-- 生化模式 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="生化模式" data-desc="人类对抗感染者，感染者可将人类转化" data-rarity="epic">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🧪</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">生化模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
-                    </div>
-                    <!-- 尸潮围城 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="尸潮围城模式" data-desc="抵御海量僵尸进攻，建立防御工事" data-rarity="rare">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🧟‍♂️</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">尸潮围城</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
-                    </div>
-                    <!-- 感染模式 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="感染模式" data-desc="类似生化，但感染速度更快，节奏紧凑" data-rarity="uncommon">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🦠</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">感染模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
-                    </div>
-                    <!-- 据点占领 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="据点占领模式" data-desc="占领并守住地图上的战略要点" data-rarity="uncommon">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🏰</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">据点占领</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
-                    </div>
-                    <!-- 突围模式 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="突围模式" data-desc="突破敌方防线，到达指定撤离点" data-rarity="rare">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🏃</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">突围模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category: Weapon & Special -->
-            <div class="mb-12 mc-reveal" style="transition-delay: 0.2s">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-8 bg-mc-gold border-2 border-black flex items-center justify-center">🔫</div>
-                    <h3 class="font-pixel text-2xl text-mc-gold" style="text-shadow: 2px 2px 0 #000;">武器与特殊模式</h3>
-                    <div class="flex-1 h-2 bg-gray-600 border-2 border-black"></div>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    <!-- 武器轮盘 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="武器轮盘模式" data-desc="每轮随机获得武器，适应各种枪械作战" data-rarity="rare">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🎲</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">武器轮盘</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
-                    </div>
-                    <!-- 武器大师 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="武器大师模式" data-desc="击杀升级，死亡降级，武器降级" data-rarity="epic">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🗡️</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">武器大师</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
-                    </div>
-                    <!-- 武器解锁 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="武器解锁模式" data-desc="击杀升级，死亡降级，武器升级" data-rarity="rare">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🔓</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">武器解锁</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
-                    </div>
-                    <!-- 换枪大师 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="换枪大师模式" data-desc="每次击杀自动升级武器，考验全武器掌握" data-rarity="uncommon">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🔄</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">换枪大师</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
-                    </div>
-                    <!-- 枪神模式 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group item-glow-enchanted" data-name="枪神模式" data-desc="击杀降级 - 循环降级" data-rarity="legendary">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🏹</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">枪神模式</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-gold border border-black"></div>
-                    </div>
-                    <!-- SCP-Rush -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="SCP-Rush模式" data-desc="基于SCP基金会题材的追逐逃生玩法" data-rarity="epic">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🚪</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">SCP-Rush</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category: Casual & Mini Games -->
-            <div class="mb-12 mc-reveal" style="transition-delay: 0.3s">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-8 h-8 bg-mc-diamond border-2 border-black flex items-center justify-center">🎮</div>
-                    <h3 class="font-pixel text-2xl text-mc-diamond" style="text-shadow: 2px 2px 0 #000;">休闲与小游戏</h3>
-                    <div class="flex-1 h-2 bg-gray-600 border-2 border-black"></div>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    <!-- 闪金夺宝 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="闪金夺宝模式" data-desc="收集地图中的金币，抢夺他人宝藏" data-rarity="uncommon">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💰</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">闪金夺宝</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
-                    </div>
-                    <!-- 钓鱼小游戏 -->
-                    <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="钓鱼小游戏模式" data-desc="休闲钓鱼比赛，钓到稀有鱼获取胜" data-rarity="common">
-                        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🎣</div>
-                        <div class="font-pixel text-xs text-center text-gray-800 leading-tight">钓鱼小游戏</div>
-                        <div class="absolute top-1 right-1 w-3 h-3 bg-gray-400 border border-black"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Legendary Showcase -->
-            <div class="mt-16 mc-reveal" style="transition-delay: 0.4s">
-                <div class="mc-panel-dark p-8 text-center relative overflow-hidden">
-                    <div class="absolute inset-0 opacity-10" style="background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,215,0,0.1) 10px, rgba(255,215,0,0.1) 20px);"></div>
-                    <div class="relative z-10">
-                        <div class="text-6xl mb-4">📦</div>
-                        <h3 class="font-pixel text-3xl text-mc-gold mb-4" style="text-shadow: 2px 2px 0 #000;">数据包总数</h3>
-                        <div class="font-pixel text-6xl text-white mb-4" style="text-shadow: 4px 4px 0 #000;">26</div>
-                        <p class="text-gray-300">持续更新中，更多模式开发中...</p>
-                        <div class="mt-6 flex justify-center gap-4 flex-wrap">
-                            <span class="px-3 py-1 bg-mc-red border-2 border-black text-white font-pixel text-sm">PVP: 12</span>
-                            <span class="px-3 py-1 bg-mc-emerald border-2 border-black text-white font-pixel text-sm">PVE: 6</span>
-                            <span class="px-3 py-1 bg-mc-gold border-2 border-black text-white font-pixel text-sm">武器: 6</span>
-                            <span class="px-3 py-1 bg-mc-diamond border-2 border-black text-white font-pixel text-sm">休闲: 2</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Hearts -->
+        <div class="mt-8 flex justify-center gap-1 mc-reveal active" style="transition-delay: 0.5s">
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
+            <div class="mc-heart"></div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="relative py-24 md:py-32 bg-dirt">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-16 mc-reveal">
-                <div class="inline-block mc-panel-dark px-6 py-2 mb-4">
-                    <span class="font-pixel text-mc-gold text-lg" style="text-shadow: 2px 2px 0 #000;">⭐ 技能面板</span>
-                </div>
-                <h2 class="font-pixel text-3xl md:text-5xl text-white mb-4" style="text-shadow: 3px 3px 0 #000;">
-                    我的 <span class="text-mc-emerald">技能</span>
-                </h2>
-            </div>
-
-            <div class="space-y-6">
-                <!-- Skill 1 -->
-                <div class="mc-reveal">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">📜</span>
-                            <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">MCFunction 命令</span>
-                        </div>
-                        <span class="font-pixel text-mc-gold">Lv.50</span>
-                    </div>
-                    <div class="mc-xp-bar">
-                        <div class="mc-xp-fill skill-animate" data-width="50"></div>
-                    </div>
-                </div>
-
-                <!-- Skill 2 -->
-                <div class="mc-reveal" style="transition-delay: 0.1s">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">🧱</span>
-                            <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">数据包架构设计</span>
-                        </div>
-                        <span class="font-pixel text-mc-gold">Lv.50</span>
-                    </div>
-                    <div class="mc-xp-bar">
-                        <div class="mc-xp-fill skill-animate" data-width="50"></div>
-                    </div>
-                </div>
-
-                <!-- Skill 3 -->
-                <div class="mc-reveal" style="transition-delay: 0.2s">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">⚔️</span>
-                            <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">游戏平衡设计</span>
-                        </div>
-                        <span class="font-pixel text-mc-gold">Lv.50</span>
-                    </div>
-                    <div class="mc-xp-bar">
-                        <div class="mc-xp-fill skill-animate" data-width="50"></div>
-                    </div>
-                </div>
-
-                <!-- Skill 4 -->
-                <div class="mc-reveal" style="transition-delay: 0.3s">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">🏗️</span>
-                            <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">地图构建</span>
-                        </div>
-                        <span class="font-pixel text-mc-gold">Lv.50</span>
-                    </div>
-                    <div class="mc-xp-bar">
-                        <div class="mc-xp-fill skill-animate" data-width="50"></div>
-                    </div>
-                </div>
-
-                <!-- Skill 7 -->
-                <div class="mc-reveal" style="transition-delay: 0.6s">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">💻</span>
-                            <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">全栈开发</span>
-                        </div>
-                        <span class="font-pixel text-mc-gold">Lv.90</span>
-                    </div>
-                    <div class="mc-xp-bar">
-                        <div class="mc-xp-fill skill-animate" data-width="90"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Enchantment Table Style -->
-            <div class="mt-12 mc-reveal" style="transition-delay: 0.7s">
-                <div class="mc-panel-dark p-6 text-center">
-                    <div class="text-4xl mb-4">📖</div>
-                    <h3 class="font-pixel text-xl text-mc-diamond mb-2" style="text-shadow: 2px 2px 0 #000;">✨ 数据包玩家 Lv.66</h3>
-                    <p class="text-gray-400 text-sm">做了好多好玩的数据包~</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="relative py-24 md:py-32 bg-stone">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-16 mc-reveal">
-                <div class="inline-block mc-panel-dark px-6 py-2 mb-4">
-                    <span class="font-pixel text-mc-gold text-lg" style="text-shadow: 2px 2px 0 #000;">✉️ 书与笔</span>
-                </div>
-                <h2 class="font-pixel text-3xl md:text-5xl text-white mb-4" style="text-shadow: 3px 3px 0 #000;">
-                    找我 <span class="text-mc-gold">聊天</span>
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Contact Info -->
-                <div class="mc-reveal">
-                    <div class="mc-panel p-6 h-full">
-                        <h3 class="font-pixel text-xl text-gray-800 mb-6 border-b-4 border-gray-400 pb-2">联系方式</h3>
-
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-4 bg-gray-200 p-4 border-2 border-gray-400 hover:bg-gray-300 transition-colors">
-                                <div class="w-12 h-12 bg-mc-grass border-2 border-black flex items-center justify-center text-2xl flex-shrink-0">📧</div>
-                                <div>
-                                    <div class="font-pixel text-sm text-gray-500">邮箱</div>
-                                    <div class="font-bold text-gray-800">1756745914@qq.com</div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-4 bg-gray-200 p-4 border-2 border-gray-400 hover:bg-gray-300 transition-colors">
-                                <div class="w-12 h-12 bg-mc-diamond border-2 border-black flex items-center justify-center text-2xl flex-shrink-0">💎</div>
-                                <div>
-                                    <div class="font-pixel text-sm text-gray-500">QQ群 / 社区</div>
-                                    <div class="font-bold text-gray-800">加入玩家交流群</div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-4 bg-gray-200 p-4 border-2 border-gray-400 hover:bg-gray-300 transition-colors">
-                                <div class="w-12 h-12 bg-mc-gold border-2 border-black flex items-center justify-center text-2xl flex-shrink-0">🏆</div>
-                                <div>
-                                    <div class="font-pixel text-sm text-gray-500">服务器合作</div>
-                                    <div class="font-bold text-gray-800">欢迎一起玩！</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 p-4 bg-yellow-100 border-2 border-yellow-600">
-                            <div class="flex items-start gap-2">
-                                <span class="text-xl">💡</span>
-                                <div>
-                                    <div class="font-pixel text-sm text-yellow-800 font-bold">提示</div>
-                                    <div class="text-sm text-yellow-700">数据包可以改规则和参数，想怎么玩都行！</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="mc-reveal" style="transition-delay: 0.2s">
-                    <div class="mc-panel p-6 h-full">
-                        <h3 class="font-pixel text-xl text-gray-800 mb-6 border-b-4 border-gray-400 pb-2">写一封信</h3>
-
-                        <form id="mc-contact-form" class="space-y-4">
-                            <div>
-                                <label class="block font-pixel text-sm text-gray-600 mb-1">玩家名称</label>
-                                <input type="text" class="w-full px-4 py-3 bg-white border-4 border-gray-500 focus:border-mc-diamond focus:outline-none transition-colors" placeholder="输入你的游戏ID">
-                            </div>
-                            <div>
-                                <label class="block font-pixel text-sm text-gray-600 mb-1">联系方式</label>
-                                <input type="text" class="w-full px-4 py-3 bg-white border-4 border-gray-500 focus:border-mc-diamond focus:outline-none transition-colors" placeholder="QQ / 邮箱 / 微信">
-                            </div>
-                            <div>
-                                <label class="block font-pixel text-sm text-gray-600 mb-1">消息内容</label>
-                                <textarea rows="5" class="w-full px-4 py-3 bg-white border-4 border-gray-500 focus:border-mc-diamond focus:outline-none transition-colors resize-none" placeholder="想聊数据包、一起玩或者随便聊聊~"></textarea>
-                            </div>
-                            <button type="submit" class="w-full mc-btn mc-btn-green py-4 text-white font-pixel text-lg">
-                                📨 发送
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="relative py-8 bg-night-sky border-t-4 border-black">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="text-center md:text-left">
-                    <p class="font-pixel text-gray-400 text-sm" style="text-shadow: 1px 1px 0 #000;">
-                        &copy; 2026 童话小可 | 我的世界爱好者
-                    </p>
-                    <p class="text-gray-500 text-xs mt-1">Made with 💎 and 命令方块</p>
-                </div>
-                <div class="flex items-center gap-3">
-                    <a href="#" class="mc-btn w-10 h-10 flex items-center justify-center text-xl p-0">🐙</a>
-                    <a href="#" class="mc-btn w-10 h-10 flex items-center justify-center text-xl p-0">💬</a>
-                    <a href="#" class="mc-btn w-10 h-10 flex items-center justify-center text-xl p-0">📺</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top -->
-    <button id="mc-back-to-top" class="fixed bottom-8 right-8 w-14 h-14 mc-btn mc-btn-green text-white font-pixel text-xl hidden items-center justify-center z-50">
-        ⬆️
-    </button>
-
-    <!-- Tooltip -->
-    <div id="mc-tooltip" class="mc-tooltip">
-        <div id="tooltip-name" class="font-pixel mb-1"></div>
-        <div id="tooltip-desc" class="text-gray-300 text-xs"></div>
     </div>
+</section>
 
-    <script>
+<!-- About Section -->
+<section id="about" class="relative py-24 md:py-32 bg-dirt">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16 mc-reveal">
+            <div class="inline-block mc-panel-dark px-6 py-2 mb-4">
+                <span class="font-pixel text-mc-gold text-lg" style="text-shadow: 2px 2px 0 #000;">📋 玩家信息</span>
+            </div>
+            <h2 class="font-pixel text-3xl md:text-5xl text-white mb-4" style="text-shadow: 3px 3px 0 #000;">
+                关于 <span class="text-mc-diamond">童话小可</span>
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Player Card -->
+            <div class="mc-reveal">
+                <div class="mc-panel p-6 relative">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-20 h-20 border-4 border-black flex items-center justify-center flex-shrink-0 overflow-hidden" style="box-shadow: 4px 4px 0 rgba(0,0,0,0.3);">
+                            <img src="avatar.png" alt="童话小可" class="w-full h-full object-cover" style="image-rendering: pixelated;">
+                        </div>
+                        <div>
+                            <h3 class="font-pixel text-2xl text-mc-gold" style="text-shadow: 2px 2px 0 #000;">童话小可</h3>
+                            <p class="text-gray-600 font-medium">数据包开发者</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 bg-gray-200 p-3 border-2 border-gray-400">
+                            <span class="text-xl">⚔️</span>
+                            <div>
+                                <div class="text-sm text-gray-500">职业</div>
+                                <div class="font-bold text-gray-800">我的世界爱好者</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-gray-200 p-3 border-2 border-gray-400">
+                            <span class="text-xl">📦</span>
+                            <div>
+                                <div class="text-sm text-gray-500">数据包数量</div>
+                                <div class="font-bold text-gray-800">26 个已完成项目</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-gray-200 p-3 border-2 border-gray-400">
+                            <span class="text-xl">🎯</span>
+                            <div>
+                                <div class="text-sm text-gray-500">专精领域</div>
+                                <div class="font-bold text-gray-800">做各种好玩的模式</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-gray-200 p-3 border-2 border-gray-400">
+                            <span class="text-xl">💎</span>
+                            <div>
+                                <div class="text-sm text-gray-500">开发平台</div>
+                                <div class="font-bold text-gray-800">Java 版 Minecraft</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- XP Level -->
+                    <div class="mt-6 flex items-center gap-2">
+                        <span class="font-pixel text-mc-green text-xl" style="text-shadow: 1px 1px 0 #000;">等级 99</span>
+                        <div class="flex-1 mc-xp-bar">
+                            <div class="mc-xp-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="mc-reveal" style="transition-delay: 0.2s">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mc-panel p-6 text-center hover:scale-105 transition-transform cursor-pointer" onclick="createParticles(event)">
+                        <div class="text-4xl mb-2">⚔️</div>
+                        <div class="font-pixel text-3xl text-mc-red" style="text-shadow: 2px 2px 0 #000;">26</div>
+                        <div class="text-gray-600 font-medium mt-1">数据包</div>
+                    </div>
+                    <div class="mc-panel p-6 text-center hover:scale-105 transition-transform cursor-pointer" onclick="createParticles(event)">
+                        <div class="text-4xl mb-2">🏆</div>
+                        <div class="font-pixel text-3xl text-mc-gold" style="text-shadow: 2px 2px 0 #000;">15+</div>
+                        <div class="text-gray-600 font-medium mt-1">PVP模式</div>
+                    </div>
+                    <div class="mc-panel p-6 text-center hover:scale-105 transition-transform cursor-pointer" onclick="createParticles(event)">
+                        <div class="text-4xl mb-2">🧟</div>
+                        <div class="font-pixel text-3xl text-mc-emerald" style="text-shadow: 2px 2px 0 #000;">5+</div>
+                        <div class="text-gray-600 font-medium mt-1">PVE模式</div>
+                    </div>
+                    <div class="mc-panel p-6 text-center hover:scale-105 transition-transform cursor-pointer" onclick="createParticles(event)">
+                        <div class="text-4xl mb-2">🎮</div>
+                        <div class="font-pixel text-3xl text-mc-diamond" style="text-shadow: 2px 2px 0 #000;">6+</div>
+                        <div class="text-gray-600 font-medium mt-1">小游戏</div>
+                    </div>
+                </div>
+
+                <!-- Hotbar -->
+                <div class="mt-6 mc-panel p-4">
+                    <div class="font-pixel text-sm text-gray-600 mb-2 text-center">快捷栏</div>
+                    <div class="grid grid-cols-9 gap-1">
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">🗡️</div>
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">🏹</div>
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">🔫</div>
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">💣</div>
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">🚩</div>
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">🧪</div>
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">🎣</div>
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">🏰</div>
+                        <div class="mc-slot aspect-square flex items-center justify-center text-xl">📦</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Datapacks Section -->
+<section id="datapacks" class="relative py-24 md:py-32 bg-stone">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16 mc-reveal">
+            <div class="inline-block mc-panel-dark px-6 py-2 mb-4">
+                <span class="font-pixel text-mc-gold text-lg" style="text-shadow: 2px 2px 0 #000;">📦 数据包仓库</span>
+            </div>
+            <h2 class="font-pixel text-3xl md:text-5xl text-white mb-4" style="text-shadow: 3px 3px 0 #000;">
+                已开发的 <span class="text-mc-diamond">数据包</span>
+            </h2>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+                点击物品查看详情，悬停显示工具提示
+            </p>
+        </div>
+
+        <!-- Category: PVP Modes -->
+        <div class="mb-12 mc-reveal">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 bg-mc-red border-2 border-black flex items-center justify-center">⚔️</div>
+                <h3 class="font-pixel text-2xl text-mc-red" style="text-shadow: 2px 2px 0 #000;">PVP 竞技模式</h3>
+                <div class="flex-1 h-2 bg-gray-600 border-2 border-black"></div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                <!-- 赏金猎人 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="赏金猎人模式" data-desc="击败玩家获得赏金，赏金最高的玩家成为目标" data-rarity="rare">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🎯</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">赏金猎人</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
+                </div>
+                <!-- 炸弹人 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="炸弹人模式" data-desc="枪战版烫手山芋" data-rarity="uncommon">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💣</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">炸弹人</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
+                </div>
+                <!-- 爆破模式 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="爆破模式" data-desc="进攻方安放炸弹，防守方阻止爆破" data-rarity="rare">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💥</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">爆破模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
+                </div>
+                <!-- 大逃杀 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group item-glow-enchanted" data-name="大逃杀模式" data-desc="缩圈生存，最后一人获胜，含空投系统" data-rarity="legendary">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🏆</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">大逃杀</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-gold border border-black"></div>
+                </div>
+                <!-- 夺旗 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="夺旗模式" data-desc="夺取敌方旗帜并带回基地得分" data-rarity="uncommon">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🚩</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">夺旗模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
+                </div>
+                <!-- 职业战争 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="职业战争模式" data-desc="选择职业，每种职业拥有独特技能与装备" data-rarity="epic">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">⚔️</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">职业战争</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
+                </div>
+                <!-- 个人竞技 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="个人竞技模式" data-desc="自由混战，击杀得分，先到目标分获胜" data-rarity="common">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🥷</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">个人竞技</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-gray-400 border border-black"></div>
+                </div>
+                <!-- 团队竞技 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="团队竞技模式" data-desc="红蓝两队对抗，团队配合取胜" data-rarity="common">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">👥</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">团队竞技</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-gray-400 border border-black"></div>
+                </div>
+                <!-- 幽灵模式 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="幽灵模式" data-desc="隐身潜行，近战一击必杀" data-rarity="rare">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">👻</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">幽灵模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
+                </div>
+                <!-- 歼灭模式 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="歼灭模式" data-desc="回合制，全灭敌方队伍获胜，不可复活" data-rarity="uncommon">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💀</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">歼灭模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
+                </div>
+                <!-- 一击必杀 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="一击必杀模式" data-desc="所有攻击一击致命，考验走位与反应" data-rarity="rare">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">⚡</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">一击必杀</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
+                </div>
+                <!-- 枪械追杀 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="枪械追杀模式" data-desc="使用随机枪械，追杀玩家" data-rarity="epic">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🔫</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">枪械追杀</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
+                </div>
+                <!-- 枪械追杀 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="债主模式" data-desc="鲨人 = 还钱" data-rarity="epic">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💰</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">债主模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: PVE Modes -->
+        <div class="mb-12 mc-reveal" style="transition-delay: 0.1s">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 bg-mc-emerald border-2 border-black flex items-center justify-center">🧟</div>
+                <h3 class="font-pixel text-2xl text-mc-emerald" style="text-shadow: 2px 2px 0 #000;">PVE 生存模式</h3>
+                <div class="flex-1 h-2 bg-gray-600 border-2 border-black"></div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                <!-- PVE模式 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="PVE模式" data-desc="合作对抗AI怪物波次，守护据点" data-rarity="common">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🛡️</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">PVE模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-gray-400 border border-black"></div>
+                </div>
+                <!-- 生化模式 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="生化模式" data-desc="人类对抗感染者，感染者可将人类转化" data-rarity="epic">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🧪</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">生化模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
+                </div>
+                <!-- 尸潮围城 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="尸潮围城模式" data-desc="抵御海量僵尸进攻，建立防御工事" data-rarity="rare">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🧟‍♂️</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">尸潮围城</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
+                </div>
+                <!-- 感染模式 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="感染模式" data-desc="类似生化，但感染速度更快，节奏紧凑" data-rarity="uncommon">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🦠</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">感染模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
+                </div>
+                <!-- 据点占领 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="据点占领模式" data-desc="占领并守住地图上的战略要点" data-rarity="uncommon">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🏰</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">据点占领</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
+                </div>
+                <!-- 突围模式 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="突围模式" data-desc="突破敌方防线，到达指定撤离点" data-rarity="rare">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🏃</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">突围模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Weapon & Special -->
+        <div class="mb-12 mc-reveal" style="transition-delay: 0.2s">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 bg-mc-gold border-2 border-black flex items-center justify-center">🔫</div>
+                <h3 class="font-pixel text-2xl text-mc-gold" style="text-shadow: 2px 2px 0 #000;">武器与特殊模式</h3>
+                <div class="flex-1 h-2 bg-gray-600 border-2 border-black"></div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                <!-- 武器轮盘 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="武器轮盘模式" data-desc="每轮随机获得武器，适应各种枪械作战" data-rarity="rare">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🎲</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">武器轮盘</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
+                </div>
+                <!-- 武器大师 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="武器大师模式" data-desc="击杀升级，死亡降级，武器降级" data-rarity="epic">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🗡️</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">武器大师</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
+                </div>
+                <!-- 武器解锁 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="武器解锁模式" data-desc="击杀升级，死亡降级，武器升级" data-rarity="rare">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🔓</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">武器解锁</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-diamond border border-black"></div>
+                </div>
+                <!-- 换枪大师 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="换枪大师模式" data-desc="每次击杀自动升级武器，考验全武器掌握" data-rarity="uncommon">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🔄</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">换枪大师</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
+                </div>
+                <!-- 枪神模式 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group item-glow-enchanted" data-name="枪神模式" data-desc="击杀降级 - 循环降级" data-rarity="legendary">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🏹</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">枪神模式</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-gold border border-black"></div>
+                </div>
+                <!-- SCP-Rush -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="SCP-Rush模式" data-desc="基于SCP基金会题材的追逐逃生玩法" data-rarity="epic">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🚪</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">SCP-Rush</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-obsidian border border-black"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Casual & Mini Games -->
+        <div class="mb-12 mc-reveal" style="transition-delay: 0.3s">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 bg-mc-diamond border-2 border-black flex items-center justify-center">🎮</div>
+                <h3 class="font-pixel text-2xl text-mc-diamond" style="text-shadow: 2px 2px 0 #000;">休闲与小游戏</h3>
+                <div class="flex-1 h-2 bg-gray-600 border-2 border-black"></div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                <!-- 闪金夺宝 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="闪金夺宝模式" data-desc="收集地图中的金币，抢夺他人宝藏" data-rarity="uncommon">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">💰</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">闪金夺宝</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-mc-emerald border border-black"></div>
+                </div>
+                <!-- 钓鱼小游戏 -->
+                <div class="mc-slot aspect-square flex flex-col items-center justify-center p-2 cursor-pointer group" data-name="钓鱼小游戏模式" data-desc="休闲钓鱼比赛，钓到稀有鱼获取胜" data-rarity="common">
+                    <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🎣</div>
+                    <div class="font-pixel text-xs text-center text-gray-800 leading-tight">钓鱼小游戏</div>
+                    <div class="absolute top-1 right-1 w-3 h-3 bg-gray-400 border border-black"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legendary Showcase -->
+        <div class="mt-16 mc-reveal" style="transition-delay: 0.4s">
+            <div class="mc-panel-dark p-8 text-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10" style="background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,215,0,0.1) 10px, rgba(255,215,0,0.1) 20px);"></div>
+                <div class="relative z-10">
+                    <div class="text-6xl mb-4">📦</div>
+                    <h3 class="font-pixel text-3xl text-mc-gold mb-4" style="text-shadow: 2px 2px 0 #000;">数据包总数</h3>
+                    <div class="font-pixel text-6xl text-white mb-4" style="text-shadow: 4px 4px 0 #000;">26</div>
+                    <p class="text-gray-300">持续更新中，更多模式开发中...</p>
+                    <div class="mt-6 flex justify-center gap-4 flex-wrap">
+                        <span class="px-3 py-1 bg-mc-red border-2 border-black text-white font-pixel text-sm">PVP: 12</span>
+                        <span class="px-3 py-1 bg-mc-emerald border-2 border-black text-white font-pixel text-sm">PVE: 6</span>
+                        <span class="px-3 py-1 bg-mc-gold border-2 border-black text-white font-pixel text-sm">武器: 6</span>
+                        <span class="px-3 py-1 bg-mc-diamond border-2 border-black text-white font-pixel text-sm">休闲: 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="relative py-24 md:py-32 bg-dirt">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-16 mc-reveal">
+            <div class="inline-block mc-panel-dark px-6 py-2 mb-4">
+                <span class="font-pixel text-mc-gold text-lg" style="text-shadow: 2px 2px 0 #000;">⭐ 技能面板</span>
+            </div>
+            <h2 class="font-pixel text-3xl md:text-5xl text-white mb-4" style="text-shadow: 3px 3px 0 #000;">
+                我的 <span class="text-mc-emerald">技能</span>
+            </h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Skill 1 -->
+            <div class="mc-reveal">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">📜</span>
+                        <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">MCFunction 命令</span>
+                    </div>
+                    <span class="font-pixel text-mc-gold">Lv.50</span>
+                </div>
+                <div class="mc-xp-bar">
+                    <div class="mc-xp-fill skill-animate" data-width="50"></div>
+                </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="mc-reveal" style="transition-delay: 0.1s">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🧱</span>
+                        <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">数据包架构设计</span>
+                    </div>
+                    <span class="font-pixel text-mc-gold">Lv.50</span>
+                </div>
+                <div class="mc-xp-bar">
+                    <div class="mc-xp-fill skill-animate" data-width="50"></div>
+                </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="mc-reveal" style="transition-delay: 0.2s">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">⚔️</span>
+                        <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">游戏平衡设计</span>
+                    </div>
+                    <span class="font-pixel text-mc-gold">Lv.50</span>
+                </div>
+                <div class="mc-xp-bar">
+                    <div class="mc-xp-fill skill-animate" data-width="50"></div>
+                </div>
+            </div>
+
+            <!-- Skill 4 -->
+            <div class="mc-reveal" style="transition-delay: 0.3s">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🏗️</span>
+                        <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">地图构建</span>
+                    </div>
+                    <span class="font-pixel text-mc-gold">Lv.50</span>
+                </div>
+                <div class="mc-xp-bar">
+                    <div class="mc-xp-fill skill-animate" data-width="50"></div>
+                </div>
+            </div>
+
+            <!-- Skill 7 -->
+            <div class="mc-reveal" style="transition-delay: 0.6s">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">💻</span>
+                        <span class="font-pixel text-white text-lg" style="text-shadow: 2px 2px 0 #000;">全栈开发</span>
+                    </div>
+                    <span class="font-pixel text-mc-gold">Lv.90</span>
+                </div>
+                <div class="mc-xp-bar">
+                    <div class="mc-xp-fill skill-animate" data-width="90"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enchantment Table Style -->
+        <div class="mt-12 mc-reveal" style="transition-delay: 0.7s">
+            <div class="mc-panel-dark p-6 text-center">
+                <div class="text-4xl mb-4">📖</div>
+                <h3 class="font-pixel text-xl text-mc-diamond mb-2" style="text-shadow: 2px 2px 0 #000;">✨ 数据包玩家 Lv.66</h3>
+                <p class="text-gray-400 text-sm">做了好多好玩的数据包~</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="relative py-24 md:py-32 bg-stone">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-16 mc-reveal">
+            <div class="inline-block mc-panel-dark px-6 py-2 mb-4">
+                <span class="font-pixel text-mc-gold text-lg" style="text-shadow: 2px 2px 0 #000;">✉️ 书与笔</span>
+            </div>
+            <h2 class="font-pixel text-3xl md:text-5xl text-white mb-4" style="text-shadow: 3px 3px 0 #000;">
+                找我 <span class="text-mc-gold">聊天</span>
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Contact Info -->
+            <div class="mc-reveal">
+                <div class="mc-panel p-6 h-full">
+                    <h3 class="font-pixel text-xl text-gray-800 mb-6 border-b-4 border-gray-400 pb-2">联系方式</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-gray-200 p-4 border-2 border-gray-400 hover:bg-gray-300 transition-colors">
+                            <div class="w-12 h-12 bg-mc-grass border-2 border-black flex items-center justify-center text-2xl flex-shrink-0">📧</div>
+                            <div>
+                                <div class="font-pixel text-sm text-gray-500">邮箱</div>
+                                <div class="font-bold text-gray-800">1756745914@qq.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-gray-200 p-4 border-2 border-gray-400 hover:bg-gray-300 transition-colors">
+                            <div class="w-12 h-12 bg-mc-diamond border-2 border-black flex items-center justify-center text-2xl flex-shrink-0">💎</div>
+                            <div>
+                                <div class="font-pixel text-sm text-gray-500">QQ群 / 社区</div>
+                                <a href="https://qm.qq.com/q/IHGkygWicu" target="_blank" class="font-bold text-gray-800 hover:text-mc-diamond transition-colors">加入玩家交流群 →</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-gray-200 p-4 border-2 border-gray-400 hover:bg-gray-300 transition-colors">
+                            <div class="w-12 h-12 bg-mc-gold border-2 border-black flex items-center justify-center text-2xl flex-shrink-0">🏆</div>
+                            <div>
+                                <div class="font-pixel text-sm text-gray-500">服务器合作</div>
+                                <div class="font-bold text-gray-800">欢迎一起玩！</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-100 border-2 border-yellow-600">
+                        <div class="flex items-start gap-2">
+                            <span class="text-xl">💡</span>
+                            <div>
+                                <div class="font-pixel text-sm text-yellow-800 font-bold">提示</div>
+                                <div class="text-sm text-yellow-700">数据包可以改规则和参数，想怎么玩都行！</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="mc-reveal" style="transition-delay: 0.2s">
+                <div class="mc-panel p-6 h-full">
+                    <h3 class="font-pixel text-xl text-gray-800 mb-6 border-b-4 border-gray-400 pb-2">写一封信</h3>
+
+                    <form id="mc-contact-form" class="space-y-4">
+                        <div>
+                            <label class="block font-pixel text-sm text-gray-600 mb-1">玩家名称</label>
+                            <input type="text" class="w-full px-4 py-3 bg-white border-4 border-gray-500 focus:border-mc-diamond focus:outline-none transition-colors" placeholder="输入你的游戏ID">
+                        </div>
+                        <div>
+                            <label class="block font-pixel text-sm text-gray-600 mb-1">联系方式</label>
+                            <input type="text" class="w-full px-4 py-3 bg-white border-4 border-gray-500 focus:border-mc-diamond focus:outline-none transition-colors" placeholder="QQ / 邮箱 / 微信">
+                        </div>
+                        <div>
+                            <label class="block font-pixel text-sm text-gray-600 mb-1">消息内容</label>
+                            <textarea rows="5" class="w-full px-4 py-3 bg-white border-4 border-gray-500 focus:border-mc-diamond focus:outline-none transition-colors resize-none" placeholder="想聊数据包、一起玩或者随便聊聊~"></textarea>
+                        </div>
+                        <button type="submit" class="w-full mc-btn mc-btn-green py-4 text-white font-pixel text-lg">
+                            📨 发送
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="relative py-8 bg-night-sky border-t-4 border-black">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-center md:text-left">
+                <p class="font-pixel text-gray-400 text-sm" style="text-shadow: 1px 1px 0 #000;">
+                    &copy; 2026 童话小可 | 我的世界爱好者
+                </p>
+                <p class="text-gray-500 text-xs mt-1">Made with 💎 and 命令方块</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="#" class="mc-btn w-10 h-10 flex items-center justify-center text-xl p-0">🐙</a>
+                <a href="#" class="mc-btn w-10 h-10 flex items-center justify-center text-xl p-0">💬</a>
+                <a href="#" class="mc-btn w-10 h-10 flex items-center justify-center text-xl p-0">📺</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="mc-back-to-top" class="fixed bottom-8 right-8 w-14 h-14 mc-btn mc-btn-green text-white font-pixel text-xl hidden items-center justify-center z-50">
+    ⬆️
+</button>
+
+
+<!-- Minecraft Style Modal -->
+<div id="mc-modal-overlay" class="fixed inset-0 bg-black/70 z-[9998] hidden items-center justify-center" style="backdrop-filter: blur(4px);">
+    <div id="mc-modal" class="mc-panel p-0 max-w-md w-[90%] mx-auto transform scale-90 opacity-0 transition-all duration-200">
+        <!-- Modal Header -->
+        <div class="bg-mc-grassDark border-b-4 border-black p-4 flex items-center gap-3">
+            <span class="text-2xl">📦</span>
+            <span class="font-pixel text-white text-xl" style="text-shadow: 2px 2px 0 #000;">系统消息</span>
+        </div>
+        <!-- Modal Body -->
+        <div class="p-6 bg-[#C6C6C6]">
+            <div class="flex items-start gap-4">
+                <div class="w-16 h-16 bg-mc-diamond/20 border-4 border-black flex items-center justify-center flex-shrink-0">
+                    <span class="text-3xl">📨</span>
+                </div>
+                <div>
+                    <p class="font-pixel text-gray-800 text-lg mb-2" style="text-shadow: 1px 1px 0 rgba(255,255,255,0.5);">信件已收到！</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        你的消息已通过<span class="text-mc-diamond font-bold">末影人</span>之手送出~<br>
+                        <span class="text-gray-500 text-xs">（虽然后端还没做好，但心意收到啦！）</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Footer -->
+        <div class="p-4 bg-[#B0B0B0] border-t-4 border-black flex justify-center">
+            <button id="mc-modal-close" class="mc-btn mc-btn-green px-8 py-3 text-white font-pixel text-lg min-w-[120px]">
+                ✅ 知道了
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Tooltip -->
+<div id="mc-tooltip" class="mc-tooltip">
+    <div id="tooltip-name" class="font-pixel mb-1"></div>
+    <div id="tooltip-desc" class="text-gray-300 text-xs"></div>
+</div>
+
+<script>
     // Loading Screen
     const loaderFill = document.getElementById('loader-fill');
     const loaderText = document.getElementById('loader-text');
@@ -1217,10 +1257,55 @@
         });
     });
 
+    // Minecraft Style Modal
+    const mcModalOverlay = document.getElementById('mc-modal-overlay');
+    const mcModal = document.getElementById('mc-modal');
+    const mcModalClose = document.getElementById('mc-modal-close');
+
+    function showMcModal() {
+        mcModalOverlay.classList.remove('hidden');
+        mcModalOverlay.classList.add('flex');
+        // Small delay for animation
+        setTimeout(() => {
+            mcModal.classList.remove('scale-90', 'opacity-0');
+            mcModal.classList.add('scale-100', 'opacity-100');
+        }, 10);
+        // Play a little particle burst at center
+        const rect = mcModal.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        for (let i = 0; i < 12; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = (centerX + (Math.random() - 0.5) * 100) + 'px';
+            particle.style.top = (centerY + (Math.random() - 0.5) * 60) + 'px';
+            particle.style.background = ['#5D8C3A', '#FFD700', '#00FFFF', '#B02E26', '#50C878'][Math.floor(Math.random() * 5)];
+            particle.style.border = '1px solid #000';
+            particle.style.width = '6px';
+            particle.style.height = '6px';
+            document.body.appendChild(particle);
+            setTimeout(() => particle.remove(), 1000);
+        }
+    }
+
+    function hideMcModal() {
+        mcModal.classList.remove('scale-100', 'opacity-100');
+        mcModal.classList.add('scale-90', 'opacity-0');
+        setTimeout(() => {
+            mcModalOverlay.classList.add('hidden');
+            mcModalOverlay.classList.remove('flex');
+        }, 200);
+    }
+
+    mcModalClose.addEventListener('click', hideMcModal);
+    mcModalOverlay.addEventListener('click', (e) => {
+        if (e.target === mcModalOverlay) hideMcModal();
+    });
+
     // Contact Form
     document.getElementById('mc-contact-form').addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('📨 我还没有实现这个功能😭');
+        showMcModal();
         e.target.reset();
     });
 
@@ -1230,6 +1315,6 @@
             if (!btn.closest('a')) createParticles(e);
         });
     });
-    </script>
+</script>
 </body>
 </html>
